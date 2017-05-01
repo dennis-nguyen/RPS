@@ -13,27 +13,34 @@
 <body>
     <div class="container">
         <h1 class="text-center text-primary">Rock Paper Scissors</h1>
-        <div class="col-lg-12 statusBox">
-            <input type="text" class="col-lg-3 offset-lg-4" id="playerName" placeholder="Enter Name">
-            <input type="button" class="btn btn-primary col-lg-1 nameButton" value="Enter">
+        <div class="col-lg-12 statusBox text-center">
+            <div class="playerEnter">
+                <input type="text" class="col-lg-3" id="playerName" placeholder="Enter Name">
+                <input type="button" class="btn btn-primary col-lg-1 nameButton" value="Enter">
+            </div>
         </div>
         <div class="row">
             <div class="playerOne col-lg-4 text-center">
-                <div id="rock" class="choices">Rock </div>
-                <div id="paper" class="choices">paper </div>
-                <div id="scissors" class="choices">scissors </div>
+                <span class="nameOne"></span>
+                <span class="playerOnesAnswer"></span>
+                <div id="rock" class="choices btn-danger">Rock </div>
+                <div id="paper" class="choices btn-warning">paper </div>
+                <div id="scissors" class="choices btn-info">scissors </div>
             </div>
-            <div class="col-lg-4 winner text-center">Who won box - 3 sec time out</div>
+            <div class="col-lg-4 winner text-center"></div>
             <div class="playerTwo col-lg-4 text-center">
-                <div id="rock" class="choices">Rock </div>
-                <div id="paper" class="choices">paper </div>
-                <div id="scissors" class="choices">scissors </div>
+                <span class="nameTwo"></span>
+                <span class="playerTwosAnswer"></span>
+                <div id="rock" class="choices btn-danger">Rock </div>
+                <div id="paper" class="choices btn-warning">paper </div>
+                <div id="scissors" class="choices btn-info">scissors </div>
             </div>
         </div>
         <div class="row">
-            <div class="chatRoom col-lg-8 offset-lg-2 text-center">CHATROOM</div>
-            <input type="text" class="col-lg-7 offset-lg-2 chatText" id="chat">
-            <input type="button" class="btn btn-primary col-lg-1" value="Send">
+            <h1 class="col-lg-8 offset-lg-2 text-center">Chatroom</h1>
+            <div class="chatRoom col-lg-8 offset-lg-2"></div>
+            <input type="text" class="col-lg-7 offset-lg-2 chatText" id="chat" placeholder="Only players can chat">
+            <input type="button" class="chatBtn btn btn-primary col-lg-1" value="Send">
         </div>
     </div>
 </body>

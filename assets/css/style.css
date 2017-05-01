@@ -1,11 +1,53 @@
-div {
+/*div {
   border: solid 1px black;
+}*/
+
+.playerOne,
+.playerTwo,
+.chatRoom,
+.container {
+	border: solid 1px black;
+}
+
+.winner {
+	border: solid 1px blue;
 }
 
 .playerOne {
-  height: 100px;
+  height: 200px;
+  position: relative;
+}
+
+.playerTwo {
+  height: 200px;
+  position: relative;
 }
 
 .chatRoom {
   height: 200px;
+  overflow: auto;
+}
+
+.oneWins {
+	position: absolute;
+	bottom: 0;
+	left: 10;
+}
+
+.oneLosses{
+	position: absolute;
+	bottom: 0;
+	right: 10;
+}
+
+.twoWins {
+	position: absolute;
+	bottom: 0;
+	left: 10;
+}
+
+.twoLosses{
+	position: absolute;
+	bottom: 0;
+	right: 10;
 }
