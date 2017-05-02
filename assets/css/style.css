@@ -11,16 +11,17 @@
 
 .winner {
 	border: solid 1px blue;
+	font: 100px;
 }
 
 .playerOne {
   height: 200px;
-  position: relative;
+ /* position: relative;*/
 }
 
 .playerTwo {
   height: 200px;
-  position: relative;
+ /* position: relative;*/
 }
 
 .chatRoom {
@@ -31,23 +32,28 @@
 .oneWins {
 	position: absolute;
 	bottom: 0;
-	left: 10;
 }
 
 .oneLosses{
 	position: absolute;
 	bottom: 0;
-	right: 10;
 }
 
 .twoWins {
 	position: absolute;
 	bottom: 0;
-	left: 10;
 }
 
 .twoLosses{
 	position: absolute;
 	bottom: 0;
-	right: 10;
+}
+
+.choices {
+  display: none;
+}
+
+.centerMsg {
+	font-weight: bold;
+	font-size: 24px;
 }
