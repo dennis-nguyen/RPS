@@ -45,8 +45,8 @@ $(document).ready(function() {
             if (snapshot.val().player1 && snapshot.val().player2) {
                 playerTwosChoice = snapshot.val().player2;
                 $(".statusBox").text("NEXT GAME STARTING SOON");
-                $(".playerOnesAnswer").html("<h2>" + playerOnesChoice+ "</h2>");
-                $(".playerTwosAnswer").html("<h2>" + playerTwosChoice+ "</h2>");
+                $(".playerOnesAnswer").html("<h2>" + playerOnesChoice + "</h2>");
+                $(".playerTwosAnswer").html("<h2>" + playerTwosChoice + "</h2>");
                 calcWinner(playerOnesChoice, playerTwosChoice);
             }
         }
@@ -59,10 +59,12 @@ $(document).ready(function() {
         }
         if (info && currentPlayer == 1) {
             //PLAYER ONE DISCONNECTED
+            console.log(info);
             database.ref("/player1").onDisconnect().remove();
         }
         if (info === null) {
             //PLAYER ONE DOES NOT EXIST
+            console.log(info);
             playerOne = false;
             playerOnesName = "";
             $(".nameOne").empty();
@@ -204,7 +206,17 @@ $(document).ready(function() {
     }
 
     function restart() {
-        if (currentPlayer === 0) {
+        console.log("restart going off");
+        if (currentPlayer === 0 && playerOne === false && playerTwo === true) {
+            $(".statusBox").text("PLAYER TWO READY");
+            $(".playerEnter").show();
+        }
+        if (currentPlayer === 0 && playerTwo === false && playerOne === true) {
+            $(".statusBox").text("PLAYER ONE READY");
+            $(".playerEnter").show();
+        }
+        if (currentPlayer === 0 && playerTwo === false && playerOne === false) {
+            $(".statusBox").text("WELCOME TO THE ULTIMATE EXPERIENCE OF RPS");
             $(".playerEnter").show();
         }
         database.ref("/choices").remove();
@@ -295,6 +307,21 @@ $(document).ready(function() {
             if (event.keyCode == 13) {
                 $(".nameButton").click();
             }
+        });
+
+        $(".clearChat").on("click", function() {
+            database.ref("/chat").remove();
+        });
+        
+        $(".clearPlayers").on("click", function() {
+            database.ref("/player1").remove();
+            database.ref("/player2").remove();
+            database.ref("/choices").remove();
+        });
+
+        $(".modalBtn").on("click", function() {
+            $('#myModal').modal('show');
+            console.log("button working");
         });
     }
     //CHAT FIREBASE
